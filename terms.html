@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" data-site="twinkloo" data-page="terms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Twinkloo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+
+ <style>
+        :root {
+            --primary-color: #7B68EE;
+            --secondary-color: #5D43D3;
+            --accent-color: #FF6B8B;
+            --dark-bg: #121726;
+            --card-bg: #1C2333;
+            --text-light: #F0F3FF;
+            --text-muted: #8C94B5;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, #FF8E53 100%);
+            --header-height: 80px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Header Design */
+        .header-twinkloo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(18, 23, 38, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(123, 104, 238, 0.2);
+            padding: 0 2rem;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-twinkloo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .logo-twinkloo span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 0.5rem;
+        }
+        
+        .logo-icon {
+            background: var(--gradient);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .nav-twinkloo {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link-twinkloo {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link-twinkloo:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .nav-link-twinkloo:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-link-twinkloo:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link-twinkloo.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-link-twinkloo.active:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Buttons */
+        .btn-primary-twinkloo {
+            background: var(--gradient);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(123, 104, 238, 0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary-twinkloo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(123, 104, 238, 0.4);
+        }
+        
+        .btn-accent-twinkloo {
+            background: var(--gradient-accent);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-accent-twinkloo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 139, 0.4);
+        }
+        
+        .btn-outline-light-twinkloo {
+            border-radius: 12px;
+            padding: 14px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            background: transparent;
+        }
+        
+        .btn-outline-light-twinkloo:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Hero Section */
+        .hero-twinkloo {
+            padding: calc(var(--header-height) + 40px) 0 100px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(18, 23, 38, 0.9) 0%, rgba(28, 35, 51, 0.8) 100%);
+        }
+        
+        .hero-content-twinkloo h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .text-gradient-twinkloo {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .text-accent-twinkloo {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-illustration-twinkloo {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .floating-element-twinkloo {
+            animation: floatAnimationTwinkloo 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatAnimationTwinkloo {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .floating-element-twinkloo-2 {
+            animation: floatAnimationTwinkloo2 7s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        @keyframes floatAnimationTwinkloo2 {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .particles-container-twinkloo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .particle-twinkloo {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient);
+            opacity: 0.3;
+        }
+        
+        /* Content Cards */
+        .content-card-twinkloo {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-card-twinkloo:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .content-card-twinkloo:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon-twinkloo {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(123, 104, 238, 0.3);
+        }
+        
+        /* Entertainment Cards */
+        .activity-card-twinkloo {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+        
+        .activity-card-twinkloo:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+        
+        .activity-card-twinkloo:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .activity-image-twinkloo {
+            height: 200px;
+            background: linear-gradient(135deg, #5D43D3 0%, #7B68EE 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .activity-image-twinkloo:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20L0 20z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        /* Section Titles */
+        .section-title-twinkloo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .section-title-twinkloo:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        /* FAQ Section */
+        .faq-section-twinkloo {
+            background: linear-gradient(to bottom, var(--dark-bg) 0%, #080c14 100%);
+            padding: 5rem 0;
+        }
+        
+        .accordion-item-twinkloo {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px !important;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .accordion-button-twinkloo {
+            background-color: var(--card-bg);
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 1.5rem;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .accordion-button-twinkloo:not(.collapsed) {
+            background-color: rgba(123, 104, 238, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .accordion-button-twinkloo:after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%237B68EE'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+            transform: scale(1.5);
+        }
+        
+        .accordion-button-twinkloo:not(.collapsed):after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%237B68EE'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+        }
+        
+        .accordion-body-twinkloo {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        /* About Us Section */
+        .about-section-twinkloo {
+            padding: 5rem 0;
+            background: var(--dark-bg);
+        }
+        
+        /* Footer Design */
+        .footer-twinkloo {
+            background: linear-gradient(135deg, #080c14 0%, #0b101b 100%);
+            padding: 4rem 0 2rem;
+            color: var(--text-light);
+            position: relative;
+            border-top: 1px solid rgba(123, 104, 238, 0.2);
+        }
+        
+        .footer-twinkloo:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--gradient);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-notice {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .footer-legal {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright-twinkloo {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            color: var(--text-muted);
+        }
+        
+        .responsible-entertainment {
+            margin-top: 2rem;
+        }
+        
+        .responsible-entertainment h5 {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+        
+        .responsible-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .responsible-logos img {
+            max-height: 30px;
+            border-radius: 5px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-content-twinkloo h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-twinkloo {
+                display: none;
+                position: absolute;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: var(--dark-bg);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 1px solid rgba(123, 104, 238, 0.2);
+            }
+            
+            .nav-twinkloo.active {
+                display: flex;
+            }
+            
+            .nav-link-twinkloo {
+                padding: 1rem 2rem;
+                width: 100%;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content-twinkloo h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title-twinkloo {
+                font-size: 2.2rem;
+            }
+            
+            .content-card-twinkloo, .activity-card-twinkloo {
+                margin-bottom: 1.5rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+
+    
+</head>
+<body>
+
+<!-- Header -->
+<header class="header-twinkloo">
+    <div class="header-container">
+        <a href="index.html" class="logo-twinkloo">
+            <div class="logo-icon">
+                <i class="fas fa-stars"></i>
+            </div>
+            Twink<span>loo</span>
+        </a>
+
+        <nav class="nav-twinkloo">
+            <a href="index.html" class="nav-link-twinkloo">Home</a>
+            <a href="play.html" class="nav-link-twinkloo">Entertainment</a>
+            <a href="disclaimer.html" class="nav-link-twinkloo">Disclaimer</a>
+            <a href="terms.html" class="nav-link-twinkloo active">Terms</a>
+            <a href="privacy.html" class="nav-link-twinkloo">Privacy</a>
+        </nav>
+
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Terms of Use Section -->
+<section class="about-section-twinkloo" style="padding-top:120px;">
+    <div class="container">
+        <h2 class="text-center section-title-twinkloo">Terms of Use</h2>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8">
+                <div class="content-card-twinkloo">
+
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By using Twinkloo, you agree to abide by these Terms of Use. If you do not accept these terms, please refrain from using our platform.</p>
+
+                    <h3 class="mt-4">2. User Eligibility</h3>
+                    <p>Our platform is intended for individuals who are at least 18 years old. By using Twinkloo, you confirm that you meet this requirement.</p>
+
+                    <h3 class="mt-4">3. Permitted Use</h3>
+                    <p>Twinkloo is designed exclusively for entertainment and social interaction. You agree not to misuse the platform for illegal, offensive, or unauthorized activities.</p>
+
+                    <h3 class="mt-4">4. Intellectual Property</h3>
+                    <p>All content, logos, and materials on Twinkloo are protected by copyright and intellectual property laws. Unauthorized use or reproduction is strictly prohibited.</p>
+
+                    <h3 class="mt-4">5. User Responsibilities</h3>
+                    <ul>
+                        <li>Provide accurate information when using the platform.</li>
+                        <li>Refrain from posting offensive or illegal content.</li>
+                        <li>Respect the rights and experiences of other users.</li>
+                    </ul>
+
+                    <h3 class="mt-4">6. Service Availability</h3>
+                    <p>We strive to keep the platform available at all times, but Twinkloo does not guarantee uninterrupted service or error-free operation.</p>
+
+                    <h3 class="mt-4">7. Termination of Access</h3>
+                    <p>Twinkloo reserves the right to suspend or terminate user accounts that violate these terms without prior notice.</p>
+
+                    <h3 class="mt-4">8. Changes to Terms</h3>
+                    <p>We may update these Terms of Use periodically. Continued use of the platform implies acceptance of any modifications.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-twinkloo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Twink<span>loo</span>
+                </div>
+                <p class="footer-tagline">
+                    The premier destination for interactive social entertainment. Enjoy responsibly for amusement only.
+                </p>
+
+                 <div class="footer-notice">
+                        <p class="mb-0"><strong>Important Notice:</strong> This website is designed for users who are 18 years or older. Twinkloo serves as a social platform offering free entertainment activities. No real money is involved—users cannot place bets, earn winnings, or exchange any form of real currency here.</p>
+
+                    </div>
+                    <div class="responsible-entertainment">
+                        <h5>Responsible Entertainment</h5>
+                        <div class="responsible-logos">
+
+                            <a href="https://www.gamblingtherapy.org/" target="_blank" class="me-3 mb-2">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23f8f9fa' rx='5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23121212'>Gambling Therapy</text></svg>" alt="Gambling Therapy" class="img-fluid" style="max-height: 30px;">
+                            </a>
+                            <a href="https://www.gambleaware.org/" target="_blank" class="me-3 mb-2">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23f8f9fa' rx='5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23121212'>GambleAware</text></svg>" alt="GambleAware" class="img-fluid" style="max-height: 30px;">
+                            </a>
+                            <a href="https://www.gamstop.co.uk/" target="_blank" class="me-3 mb-2">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23f8f9fa' rx='5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23121212'>GamStop</text></svg>" alt="GamStop" class="img-fluid" style="max-height: 30px;">
+                            </a>
+                                                    
+                        </div>
+                    </div>
+
+                <div class="footer-legal">
+                    <div class="footer-links">
+                        <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+                        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                        <a href="terms.html" class="footer-link">Terms of Use</a>
+                        <a href="contact.html" class="footer-link">Contact Us</a>
+                    </div>
+                    <p class="copyright-twinkloo">&copy; 2025 Twinkloo. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const menuBtn = document.querySelector(".mobile-menu-btn");
+    const navMenu = document.querySelector(".nav-twinkloo");
+    menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+</script>
+
+</body>
+</html>

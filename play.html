@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en" data-site="twinkloo" data-page="activities">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>Entertainment - Twinkloo Social Entertainment Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/orientation_utils.css" type="text/css">
+    <link rel="stylesheet" href="css/ios_fullscreen.css" type="text/css">
+    <style>
+        :root {
+            --primary-color: #7B68EE;
+            --secondary-color: #5D43D3;
+            --accent-color: #FF6B8B;
+            --dark-bg: #121726;
+            --card-bg: #1C2333;
+            --text-light: #F0F3FF;
+            --text-muted: #8C94B5;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, #FF8E53 100%);
+            --header-height: 80px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding-top: var(--header-height);
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Header Design */
+        .header-twinkloo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(18, 23, 38, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(123, 104, 238, 0.2);
+            padding: 0 2rem;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-twinkloo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .logo-twinkloo span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 0.5rem;
+        }
+        
+        .logo-icon {
+            background: var(--gradient);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .nav-twinkloo {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link-twinkloo {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link-twinkloo:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .nav-link-twinkloo:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-link-twinkloo:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link-twinkloo.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-link-twinkloo.active:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Page content */
+        .page-content {
+            padding: 40px 0;
+        }
+        
+        .section-title-twinkloo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .section-title-twinkloo:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        /* Game container */
+        .entertainment-iframe-container {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .entertainment-iframe-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .entertainment-iframe-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .entertainment-container {
+            position: relative;
+            width: 100%;
+            height: 370px;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #0d1324;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Content cards */
+        .content-card-twinkloo {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            height: auto;
+            position: relative;
+        }
+        
+        .content-card-twinkloo:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+        
+        .content-card-twinkloo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content-card-twinkloo h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Alert styling */
+        .alert {
+            border-radius: 16px;
+            border: none;
+            padding: 1.5rem;
+        }
+        
+        .alert-warning {
+            background: var(--gradient-accent);
+            color: white;
+        }
+        
+        .alert-dark {
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Buttons */
+        .btn-primary-twinkloo {
+            background: var(--gradient);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(123, 104, 238, 0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary-twinkloo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(123, 104, 238, 0.4);
+        }
+        
+        .btn-accent-twinkloo {
+            background: var(--gradient-accent);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-accent-twinkloo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 139, 0.4);
+        }
+        
+        .btn-sm {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* List styling */
+        ul {
+            padding-left: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Game canvas styling */
+        #canvas {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+            top: 0px !important;
+            left: 0px !important;
+        }
+        
+        #entertainment-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .orientation-msg-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .orientation-msg-text {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .check-fonts {
+            position: absolute;
+            left: -1000px;
+            top: -1000px;
+        }
+        
+        /* Loading spinner */
+        .entertainment-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(13, 19, 33, 0.8);
+            z-index: 10;
+            border-radius: 12px;
+        }
+        
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: var(--accent-color);
+        }
+        
+        /* Footer Design */
+        .footer-twinkloo {
+            background: linear-gradient(135deg, #080c14 0%, #0b101b 100%);
+            padding: 4rem 0 2rem;
+            color: var(--text-light);
+            position: relative;
+            border-top: 1px solid rgba(123, 104, 238, 0.2);
+        }
+        
+        .footer-twinkloo:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--gradient);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-notice {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .footer-legal {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright-twinkloo {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            color: var(--text-muted);
+        }
+        
+        .responsible-entertainment {
+            margin-top: 2rem;
+        }
+        
+        .responsible-entertainment h5 {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+        
+        .responsible-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .responsible-logos img {
+            max-height: 30px;
+            border-radius: 5px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .nav-twinkloo {
+                display: none;
+                position: absolute;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: var(--dark-bg);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 1px solid rgba(123, 104, 238, 0.2);
+            }
+            
+            .nav-twinkloo.active {
+                display: flex;
+            }
+            
+            .nav-link-twinkloo {
+                padding: 1rem 2rem;
+                width: 100%;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-content {
+                padding: 20px 0;
+            }
+            
+            .section-title-twinkloo {
+                font-size: 2.2rem;
+            }
+            
+            .entertainment-container {
+                height: 300px;
+            }
+            
+            .content-card-twinkloo {
+                padding: 1.5rem;
+            }
+            
+            .entertainment-iframe-container {
+                padding: 1.5rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .entertainment-container {
+                height: 250px;
+            }
+            
+            .header-twinkloo {
+                padding: 0 1rem;
+            }
+            
+            .logo-twinkloo {
+                font-size: 1.5rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+    <!-- Header -->
+    <header class="header-twinkloo">
+        <div class="header-container">
+            <a href="index.html" class="logo-twinkloo">
+                <div class="logo-icon">
+                    <i class="fas fa-stars"></i>
+                </div>
+                Twink<span>loo</span>
+            </a>
+            
+            <nav class="nav-twinkloo">
+                <a href="index.html" class="nav-link-twinkloo">Home</a>
+                <a href="play.html" class="nav-link-twinkloo active">Entertainment</a>
+                <a href="disclaimer.html" class="nav-link-twinkloo">Disclaimer</a>
+                <a href="terms.html" class="nav-link-twinkloo">Terms</a>
+                <a href="privacy.html" class="nav-link-twinkloo">Privacy</a>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Activities Page Content -->
+    <div class="page-content">
+        <div class="container">
+            <h2 class="text-center section-title-twinkloo">Social Entertainment Activities</h2>
+            <div class="alert alert-warning text-center mb-5 mx-auto" style="max-width: 800px;">
+                <i class="fas fa-exclamation-triangle me-2"></i> <strong>Notice:</strong> These are social entertainment activities intended for enjoyment purposes only. No financial transactions are involved.
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="entertainment-iframe-container">
+                        <h3 class="text-center mb-4">Feathered Friends - Social Entertainment Experience</h3>
+                        <div class="entertainment-container">
+                            <!-- Client's entertainment container -->
+                            <div id="entertainment-wrapper">
+                                <div class="entertainment-loading">
+                                    <div class="spinner-border" role="status">
+                                        <span class="visually-hidden">Loading entertainment...</span>
+                                    </div>
+                                </div>
+                                <div style=""></div>
+                                <div class="check-fonts">
+                                    <p class="check-font-1">test 1</p>
+                                </div> 
+                                <canvas id="canvas" class='ani_hack' width="1500" height="640" style="position: relative; top:0px !important; left:0px !important;"> </canvas>
+                                <div data-orientation="landscape" class="orientation-msg-container"><p class="orientation-msg-text">Please rotate your device</p></div>
+                                <div id="block_entertainment" style="position: absolute; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%; display:none"></div>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <p class="small">This social entertainment experience is provided for enjoyment purposes only. No real money is involved.</p>
+                        </div>
+                    </div>
+
+                 <div class="content-card-twinkloo mt-4">
+                    <h3 class="mb-3">How to Play</h3>
+                    <p>Enter the lively world of Mr. Chicken and enjoy a fun-filled social entertainment adventure! Spin the reels, match bright symbols, and unlock exciting virtual rewards. Keep an eye out for special symbols that activate bonus features, all while enjoying charming animations and immersive gameplay created just for your entertainment.</p><br>
+                    <ul>
+                        <li>Hit the SPIN button to get started</li>
+                        <li>Match 3 or more symbols to trigger fun animations</li>
+                        <li>Unlock unique features and bonus rounds</li>
+                        <li>Delight in colorful visuals and engaging themes</li>
+                        <li>Remember: everything is for entertainment only—no real-money rewards are involved</li>
+                    </ul>
+                </div>
+
+                <!-- Additional Content -->
+                <div class="content-card-twinkloo mt-4">
+                    <h3 class="mb-3">About Our Social Entertainment</h3>
+                    <p>At Twinkloo, we’re committed to providing a safe, fun, and completely free social entertainment experience. All activities are designed for users aged 18 and above, with no real-money transactions or wagering involved.</p>
+                    
+                    <p>Everything you achieve—whether progress, rewards, or milestones—is purely for entertainment and holds no monetary value. It cannot be exchanged, transferred, or redeemed for real-world currency.</p>
+                    
+                    <p>We’re always improving our platform to ensure fairness, transparency, and maximum enjoyment for our community. By joining in, you agree that all experiences are meant solely for fun and leisure.</p>
+                </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-twinkloo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Twink<span>loo</span>
+                </div>
+                <p class="footer-tagline">
+                    The premier destination for interactive social entertainment. Enjoy responsibly for amusement only.
+                </p>
+
+                 <div class="footer-notice">
+                        <p class="mb-0"><strong>Important Notice:</strong> This website is designed for users who are 18 years or older. Twinkloo serves as a social platform offering free entertainment activities. No real money is involved—users cannot place bets, earn winnings, or exchange any form of real currency here.</p>
+                    </div>
+                    <div class="responsible-entertainment">
+                        <h5>Responsible Entertainment</h5>
+                        <div class="responsible-logos">
+                            <a href="https://www.gamblingtherapy.org/" target="_blank">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23f8f9fa' rx='5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23121212'>Gambling Therapy</text></svg>" alt="Gambling Therapy">
+                            </a>
+                            <a href="https://www.gambleaware.org/" target="_blank">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23f8f9fa' rx='5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23121212'>GambleAware</text></svg>" alt="GambleAware">
+                            </a>
+                            <a href="https://www.gamstop.co.uk/" target="_blank">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23f8f9fa' rx='5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23121212'>GamStop</text></svg>" alt="GamStop">
+                            </a>
+                        </div>
+                    </div> <br>
+                
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="play.html" class="footer-link">Entertainment</a>
+                    <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+                    <a href="terms.html" class="footer-link">Terms & Conditions</a>
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="copyright-twinkloo">
+                        &copy; 2025 Twinkloo. All rights reserved. This is a social entertainment website for enjoyment purposes only. No financial transactions are involved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Client's entertainment JS files -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/createjs.min.js"></script>
+    <script type="text/javascript" src="js/platform.js"></script>
+    <script type="text/javascript" src="js/ios_fullscreen.js"></script>
+    <script type="text/javascript" src="js/howler.min.js"></script>
+    <script type="text/javascript" src="js/screenfull.min.js"></script>
+    <script type="text/javascript" src="js/ctl_utils.js"></script>
+    <script type="text/javascript" src="js/sprite_lib.js"></script>
+    <script type="text/javascript" src="js/settings.js"></script>
+    <script type="text/javascript" src="js/CSlotSettings.js"></script>
+    <script type="text/javascript" src="js/CLang.js"></script>
+    <script type="text/javascript" src="js/CPreloader.js"></script>
+    <script type="text/javascript" src="js/CMain.js"></script>
+    <script type="text/javascript" src="js/CTextButton.js"></script>
+    <script type="text/javascript" src="js/CGfxButton.js"></script>
+    <script type="text/javascript" src="js/CToggle.js"></script>
+    <script type="text/javascript" src="js/CBetBut.js"></script>
+    <script type="text/javascript" src="js/CMenu.js"></script>
+    <script type="text/javascript" src="js/CGame.js"></script>
+    <script type="text/javascript" src="js/CReelColumn.js"></script>
+    <script type="text/javascript" src="js/CInterface.js"></script>
+    <script type="text/javascript" src="js/CPayTablePanel.js"></script>
+    <script type="text/javascript" src="js/CStaticSymbolCell.js"></script>
+    <script type="text/javascript" src="js/CTweenController.js"></script>
+    <script type="text/javascript" src="js/CBonusPanel.js"></script>
+    <script type="text/javascript" src="js/CCreditsPanel.js"></script>
+    <script type="text/javascript" src="js/CCTLText.js"></script>
+    <script type="text/javascript" src="js/CRechargePanel.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-twinkloo').classList.toggle('active');
+        });
+        
+        // Wait for the DOM to be fully loaded before initializing the entertainment
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if all required entertainment classes are defined
+            if (typeof CMain === 'undefined') {
+                console.error('CMain class is not defined. Check if all entertainment scripts are loaded correctly.');
+                return;
+            }
+            
+            // Initialize the entertainment with a small delay to ensure all resources are loaded
+            setTimeout(initEntertainment, 500);
+        });
+        
+        // Initialize the entertainment
+        function initEntertainment() {
+            try {
+                // Initialize the client's entertainment
+                var oMain = new CMain({
+                    win_occurrence:30,        //WIN PERCENTAGE.SET A VALUE FROM 0 TO 100.
+                    slot_cash: 100,          //THIS IS THE CURRENT SLOT CASH AMOUNT. THE GAME CHECKS IF THERE IS AVAILABLE CASH FOR WINNINGS.
+                    bonus_occurrence:15,      //SET BONUS OCCURRENCE PERCENTAGE IF PLAYER GET A WIN. SET A VALUE FROM 0 TO 100. (IF 100%, PLAYER GET A BONUS EVERYTIME THERE IS A WIN).
+                    min_reel_loop:0,          //NUMBER OF REEL LOOPS BEFORE SLOT STOPS  
+                    reel_delay: 0,            //NUMBER OF FRAMES TO DELAY THE REELS THAT START AFTER THE FIRST ONE
+                    time_show_win:2000,       //DURATION IN MILLISECONDS OF THE WINNING COMBO SHOWING
+                    time_show_all_wins: 2000, //DURATION IN MILLISECONDS OF ALL WINNING COMBO
+                    money:100,               //STARING CREDIT FOR THE USER
+                    min_bet:0.05,             //MINIMUM COIN FOR BET
+                    max_bet: 0.5,             //MAXIMUM COIN FOR BET
+                    max_hold:3,               //MAXIMUM NUMBER OF POSSIBLE HOLD ON REELS
+                    perc_win_egg_1: 50,       //OCCURENCE PERCENTAGE FOR EGG 1 IN BONUS
+                    perc_win_egg_2: 35,       //OCCURENCE PERCENTAGE FOR EGG 2 IN BONUS
+                    perc_win_egg_3: 15,       //OCCURENCE PERCENTAGE FOR EGG 3 IN BONUS
+                    /***********PAYTABLE********************/
+                    //EACH SYMBOL PAYTABLE HAS 5 VALUES THAT INDICATES THE MULTIPLIER FOR X1,X2,X3,X4 OR X5 COMBOS
+                    paytable_symbol_1: [0,0,150,250,500], //PAYTABLE FOR SYMBOL 1
+                    paytable_symbol_2: [0,0,100,150,200], //PAYTABLE FOR SYMBOL 2
+                    paytable_symbol_3: [0,0,50,100,150],  //PAYTABLE FOR SYMBOL 3
+                    paytable_symbol_4: [0,10,25,50,100],  //PAYTABLE FOR SYMBOL 4
+                    paytable_symbol_5: [0,10,25,50,100],  //PAYTABLE FOR SYMBOL 5
+                    paytable_symbol_6: [0,5,15,25,50],    //PAYTABLE FOR SYMBOL 6
+                    paytable_symbol_7: [0,2,10,20,35],    //PAYTABLE FOR SYMBOL 7
+                    paytable_symbol_8: [0,1,5,10,15],     //PAYTABLE FOR SYMBOL 8
+                    /*************************************/
+                    fullscreen:true,           //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW FULLSCREEN BUTTON
+                    check_orientation:true,    //SET TO FALSE IF YOU DON'T WANT TO SHOW ORIENTATION ALERT ON MOBILE DEVICES
+                    show_credits:true,         //ENABLE/DISABLE CREDITS BUTTON IN THE MAIN SCREEN
+                    audio_enable_on_startup:false, //ENABLE/DISABLE AUDIO WHEN ENTERTAINMENT STARTS 
+                    num_spin_ads_showing:10    //NUMBER OF SPIN TO COMPLETE, BEFORE TRIGGERING AD SHOWING.
+                });
+                
+                // Hide loading spinner when entertainment is ready
+                setTimeout(function() {
+                    document.querySelector('.entertainment-loading').style.display = 'none';
+                }, 1000);
+                
+                $(oMain).on("recharge", function (evt) {
+                    //INSERT HERE YOUR RECHARGE SCRIPT THAT RETURN MONEY TO RECHARGE
+                    var iMoney = 100;
+                    if(s_oGame !== null){
+                        s_oGame.setMoney(iMoney);
+                    }
+                });
+                    
+                $(oMain).on("start_session", function (evt) {
+                    //...ADD YOUR CODE HERE EVENTUALLY
+                });
+
+                $(oMain).on("end_session", function (evt) {
+                    //...ADD YOUR CODE HERE EVENTUALLY
+                });
+                
+                $(oMain).on("bet_placed", function (evt, oBetInfo) {
+                    var iBet = oBetInfo.bet;
+                    var iTotBet = oBetInfo.tot_bet;
+                    //...ADD YOUR CODE HERE EVENTUALLY
+                });
+                
+                $(oMain).on("bonus_start", function (evt) {
+                    //...ADD YOUR CODE HERE EVENTUALLY
+                });
+
+                $(oMain).on("bonus_end", function (evt, iMoney) {
+                    //...ADD YOUR CODE HERE EVENTUALLY
+                });
+                
+                $(oMain).on("save_score", function (evt, iMoney) {
+                    //...ADD YOUR CODE HERE EVENTUALLY
+                });
+
+                $(oMain).on("show_interlevel_ad", function (evt) {
+                    //...ADD YOUR CODE HERE EVENTUALLY
+                });
+
+                $(oMain).on("share_event", function (evt, oData) {
+                    //...ADD YOUR CODE HERE EVENTUALLY
+                });
+                     
+                if (isIOS()) {
+                    setTimeout(function () {
+                        sizeHandler();
+                    }, 200);
+                } else {
+                    sizeHandler();
+                }
+            } catch (error) {
+                console.error('Error initializing entertainment:', error);
+                // Hide loading spinner
+                document.querySelector('.entertainment-loading').style.display = 'none';
+                
+                // Display a user-friendly error message
+                document.getElementById('entertainment-wrapper').innerHTML = 
+                    '<div style="color: white; text-align: center; padding: 20px;">' +
+                    '<h3>Entertainment Loading Error</h3>' +
+                    '<p>Sorry, there was an issue loading the entertainment. Please refresh the page and try again.</p>' +
+                    '<button class="btn btn-accent-twinkloo mt-3" onclick="window.location.reload()">Reload Entertainment</button>' +
+                    '</div>';
+            }
+        }
+    </script>
+</body>
+</html>
